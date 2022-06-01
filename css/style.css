@@ -1,0 +1,13 @@
+@font-face {
+	font-family: ZilapMonograma;
+	src: url(./fonts/ZilapMonograma-L2J4.ttf);
+}
+
+.uk-logo{
+	font-family: ZilapMonograma;
+	font-size: 50px;
+}
+
+.uk-navbar{
+	background: linear-gradient(to left,#28a5f5,#1e87f0) !important;
+}
