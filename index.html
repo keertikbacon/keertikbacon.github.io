@@ -2,13 +2,19 @@
 <html>
     <head>
         <title>Keertik Bacon</title>
-		<div id="head"></div>
+		
+		<link rel="icon" type="image/x-icon" href="./images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/uikit.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		
 		<script src="https://code.jquery.com/jquery.min.js"></script>
 		<script>
-			$.get("./components/head", function(data){
-				$("#head").replaceWith(data);
-			});
 			$.get("./components/navbar", function(data){
 				$("#nav").replaceWith(data);
 			});
@@ -19,6 +25,7 @@
     </head>
     <body>
 		<div id="nav"></div>
+		
 		<div class="uk-section-default">
 			<div class="uk-margin-auto">
 
