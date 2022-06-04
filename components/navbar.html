@@ -11,9 +11,7 @@
 	</div>
 </nav>
 <script>
-	var url = window.location.pathname;
-	const urlSections = url.split("/");
-	
+	//making sure that the navbar links lead to the right places
 	var dirPrefix = document.getElementById("style").getAttribute("href");
 	const slashInd = [];
 	for (let index = 0; index < dirPrefix.length; index++) {
@@ -33,7 +31,22 @@
 		let linkElement = document.getElementById(id);
 		oldDir = linkElement.getAttribute("href");
 		oldDir = oldDir.substring(2);
-		linkElement.setAttribute("href", newPrefix+oldDir);
+		linkElement.setAttribute("href",newPrefix+oldDir);
+	}
+	
+	//making the active page light up on the navbar
+	var url = window.location.pathname;
+	const urlSections = url.split("/");
+	if(urlSections[1].indexOf("about") != -1){
+		setActive("about");
+	}else if(urlSections[1].indexOf("projects") != -1){
+		setActive("projects");
+	}else if(urlSections[1].indexOf("resume") != -1){
+		setActive("resume");
+	}		
+		
+	function setActive(id){
+		document.getElementById(id).setAttribute("class","uk-active");
 	}
 	
 </script>
