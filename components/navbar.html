@@ -15,7 +15,7 @@
 	const urlSections = url.split("/");
 	
 	var dirPrefix = document.getElementById("style").getAttribute("href");
-	let slashInd;
+	const slashInd = [];
 	for (let index = 0; index < dirPrefix.length; index++) {
 		if (dirPrefix[index] == '/') {
 			slashInd.push(index);
