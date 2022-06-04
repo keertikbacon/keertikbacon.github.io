@@ -15,7 +15,13 @@
 	const urlSections = url.split("/");
 	
 	var dirPrefix = document.getElementById("style").getAttribute("href");
-	dirPrefix = dirPrefix.substring(0,dirPrefix.lastIndexOf("/"));
+	let slashInd;
+	for (let index = 0; index < dirPrefix.length; index++) {
+		if (dirPrefix[index] == '/') {
+			slashInd.push(index);
+		}
+	}
+	dirPrefix = dirPrefix.substring(0,slashInd(slashInd.length - 1);
 	
 	setNewDir("logo",dirPrefix);
 	setNewDir("about",dirPrefix);
