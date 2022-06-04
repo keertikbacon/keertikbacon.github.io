@@ -1,17 +1,18 @@
 <nav class="uk-navbar-container uk-navbar uk-light">
 	<div class="uk-navbar-left uk-margin-left">
-		<a id="logo" class="uk-navbar-item uk-logo" href="./index.html">K</a>
+		<a id="logo" class="uk-navbar-item uk-logo" href="/index.html">K</a>
 	</div>
 	<div class="uk-navbar-right uk-margin-right">
 		<ul class="uk-navbar-nav">
-			<li><a id="about" href="./about.html">About</a></li>
-			<li><a id="projects" href="./projects/index.html">Projects</a></li>
-			<li><a id="resume" href="./resume.html">Resume</a></li>
+			<li><a id="about" href="/about.html">About</a></li>
+			<li><a id="projects" href="/projects/index.html">Projects</a></li>
+			<li><a id="resume" href="/resume.html">Resume</a></li>
 		</ul>
 	</div>
 </nav>
 <script>
 	//making sure that the navbar links lead to the right places
+	/*
 	var dirPrefix = document.getElementById("style").getAttribute("href");
 	const slashInd = [];
 	for (let index = 0; index < dirPrefix.length; index++) {
@@ -33,6 +34,7 @@
 		oldDir = oldDir.substring(2);
 		linkElement.setAttribute("href",newPrefix+oldDir);
 	}
+	*/
 	
 	//making the active page light up on the navbar
 	var url = window.location.pathname;
