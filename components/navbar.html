@@ -11,31 +11,6 @@
 	</div>
 </nav>
 <script>
-	//making sure that the navbar links lead to the right places
-	/*
-	var dirPrefix = document.getElementById("style").getAttribute("href");
-	const slashInd = [];
-	for (let index = 0; index < dirPrefix.length; index++) {
-		if (dirPrefix[index] == '/') {
-			slashInd.push(index);
-		}
-	}
-	dirPrefix = dirPrefix.substring(0,slashInd[slashInd.length - 2]+1);
-	
-	setNewDir("logo",dirPrefix);
-	setNewDir("about",dirPrefix);
-	setNewDir("projects",dirPrefix);
-	setNewDir("resume",dirPrefix);
-	
-	
-	function setNewDir(id,newPrefix){
-		let linkElement = document.getElementById(id);
-		oldDir = linkElement.getAttribute("href");
-		oldDir = oldDir.substring(2);
-		linkElement.setAttribute("href",newPrefix+oldDir);
-	}
-	*/
-	
 	//making the active page light up on the navbar
 	var url = window.location.pathname;
 	const urlSections = url.split("/");

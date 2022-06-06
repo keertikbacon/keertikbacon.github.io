@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="./images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="./css/uikit.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("./components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("./components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-margin-xlarge-left uk-margin-xlarge-right">
+				<div class="uk-flex uk-flex-between">
+					<div><h1 class="uk-margin-bottom" style="font-weight: bold">Resume</h1></div>
+					<div><a class="uk-button uk-button-primary" href="Resume_Bacon_Keertik.pdf">Download PDF Resume</a></div>
+				</div>
+				<div class="uk-child-width-1-2@m" uk-grid>
+					<div>
+						<div class="uk-card uk-card-default uk-card-body">
+							<h2>About</h2>
+							<h4 class="uk-margin-remove-top"><strong>Class Standing:</strong> 3rd Year</h4>
+							<h4 class="uk-margin-remove-top"><strong>Location:</strong> Baltimore, MD</h4>
+							<h4 class="uk-margin-remove-top"><strong>Citizenship:</strong> US Citizen</h4>
+							<h4 class="uk-margin-remove-top"><strong>Security Clearance:</strong> DOE L (pending)</h4>
+						</div>
+						<div class="uk-card uk-card-default uk-card-body uk-margin-medium-top">
+							<h2>Education</h2>
+							<div class="uk-panel">
+								<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/gt-logo.png" width="100">
+								<h3 style="font-weight: bold">Georgia Institute of Technology</h3>
+								<h4 class="uk-margin-remove-top" style="font-weight: bold">Atlanta, GA</h4>
+								<h4 class="uk-margin-remove-top">BS in Mechanical Engineering</h4>
+								<h5 class="uk-margin-remove-top" style="font-style: italic">Aug. 2020 - Present</h5>
+								<ul>
+									<li><strong>Expected Graduation:</strong> May 2024</li>
+									<li><strong>GPA:</strong> 3.85</li>
+									<li>Minor in Aerospace Engineering</li>
+								</ul>
+							</div>
+						</div>
+						<div class="uk-card uk-card-default uk-card-body uk-margin-medium-top">
+							<h2>Work Experience</h2>
+							<div class="uk-panel">
+								<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/apl-logo.jpg" width="100">
+								<h3 style="font-weight: bold">Johns Hopkins University Applied Physics Laboratory</h3>
+								<h4 class="uk-margin-remove-top" style="font-weight: bold">Laurel, MD</h4>								
+								<h4 class="uk-margin-remove-top">ASPIRE High School Intern</h4>
+								<h5 class="uk-margin-remove-top" style="font-style: italic">Jun. 2019 - Aug. 2019</h5>
+								<ul>
+									<li>Developed 4-stage pipeline that recorded video from a webcam and generated a sentence description of the video, adding functionality to a computer vision system that previously could only identify objects but not describe them</li>
+									<li>Optimized the video captioning process, dropping the processing time for a 9 second video clip from 19 seconds to 10 seconds, almost achieving real-time processing</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					<div class="uk-grid-item-match">
+						<div class="uk-card uk-card-default uk-card-body">
+							<h2>Club Experience</h2>
+							<div class="uk-panel">
+								<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/RoboBuzz.png" height="100">
+								<h3 style="font-weight: bold">RoboJackets</h3>
+								<h4 class="uk-margin-remove-top" style="font-weight: bold">Atlanta, GA</h4>								
+								<h4 class="uk-margin-remove-top">Shop Manager</h4>
+								<h5 class="uk-margin-remove-top" style="font-style: italic">Dec. 2021 - Present</h5>
+								<ul>
+									<li>Embarked on machine shop modernization initiative by replacing old and dwindling tool supplies, and in the process of designing new shop layout and sheet stock storage, to improve space efficiency</li>
+									<li>Manage $1000 shop tooling budget and submit periodical bill requests for funding, to ensure that all five RoboJackets teams have access to the tools they need to work and meet competition deadlines</li>
+								</ul>
+								<h4 class="uk-margin-remove-top">RoboRacing Mechanical Engineer</h4>
+								<h5 class="uk-margin-remove-top" style="font-style: italic">Sep. 2020 - Present</h5>
+								<ul>
+									<li>Designed mounting hardware and waterproof casing for an autonomous go-kart braking system, helping the go-kart win 2nd place at the 2021 evGrand Prix Autonomous competition</li>
+									<li>Led a team of two new members in redesigning the go-kart braking system for the 2022 competition, enabling more precise control over the brakes and reducing motor strain</li>
+								</ul>
+								<h4 class="uk-margin-remove-top">Mechanical Training Lead</h4>
+								<h5 class="uk-margin-remove-top" style="font-style: italic">May 2021 - Dec. 2021</h5>
+								<ul>
+									<li>Planned and directed a training program teaching design and manufacturing for 60 new members joining RoboJackets in Fall 2021 (including updating training material to be more intuitive and streamlined, recruiting and managing a team of trainers, and coordinating logistics), resulting in a 47% increase in training session attendance from Fall 2020</li>
+								</ul>
+							</div>
+							<div class="uk-panel uk-margin-large-top">
+								<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/is-logo.png" width="100">
+								<h3 style="font-weight: bold">Invention Studio at Georgia Tech</h3>
+								<h4 class="uk-margin-remove-top" style="font-weight: bold">Atlanta, GA</h4>								
+								<h4 class="uk-margin-remove-top">Prototyping Instructor</h4>
+								<h5 class="uk-margin-remove-top" style="font-style: italic">Mar. 2022 - Present</h5>
+								<ul>
+									<li>Assist and train Georgia Tech students in the safe use of various machine tools, including 3D printers, laser cutters, waterjet cutters, metal and wood shop tools, and crafts tools</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="uk-margin-xlarge-left uk-margin-xlarge-right uk-margin-medium-top">
+				<div class="uk-child-width-1-2@m" uk-grid>
+					<div class="uk-grid-item-match">
+						<div class="uk-card uk-card-default uk-card-body">
+							<h2>Certifications</h2>
+							<a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-FMP95S8DY2"><img src="./images/cswa-logo.png" class="uk-margin-right" width="200"/></a>
+							<a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-2BHK4DWS53"><img src="./images/cswp-logo.png" width="200"/></a>
+						</div>
+					</div>
+					<div>
+						<div class="uk-card uk-card-default uk-card-body">
+							<h2>Classes taken</h2>
+							<div class="uk-child-width-1-2@m" uk-grid>
+								<div>
+									<h4 class="uk-margin-remove-top"><strong>ME 1770:</strong> Engineering Graphics</h4>
+									<h4 class="uk-margin-remove-top"><strong>COE 2001:</strong> Statics</h4>
+									<h4 class="uk-margin-remove-top"><strong>MSE 2001:</strong> Engineering Materials</h4>
+									<h4 class="uk-margin-remove-top"><strong>ME 2202:</strong> Dynamics of Rigid Bodies</h4>
+									<h4 class="uk-margin-remove-top"><strong>ECE 3710:</strong> Circuits and Electronics</h4>
+								</div>
+								<div>
+									<h4 class="uk-margin-remove-top"><strong>CS 1371:</strong> Computing for Engineers</h4>
+									<h4 class="uk-margin-remove-top"><strong>ME 2110:</strong> Creative Decisions and Design</h4>
+									<h4 class="uk-margin-remove-top"><strong>COE 3001:</strong> Deformable Bodies</h4>
+									<h4 class="uk-margin-remove-top"><strong>ECE 3741:</strong> Electronics Laboratory</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="uk-margin-xlarge-left uk-margin-xlarge-right uk-margin-medium-top">
+				<div class="uk-card uk-card-default uk-card-body">
+					<h2>Skills</h2>
+					<div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: true">
+						<div>
+							<h3 class="uk-margin-remove-top">CAD</h3>
+							<ul>
+								<li>SolidWorks</li>
+								<li>Autodesk Inventor</li>
+								<li>Inventor CAM</li>
+								<li>Inventor FEA</li>
+								<li>Autodesk CFD</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="uk-margin-remove-top">Manufacturing</h3>
+							<ul>
+								<li>3D printer</li>
+								<li>Laser cutter</li>
+								<li>CNC mill</li>
+								<li>Metal/wood shop tools</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="uk-margin-remove-top">Electronics</h3>
+							<ul>
+								<li>Arduino UNO</li>
+								<li>NI Multisim</li>
+								<li>Digital circuit design</li>
+								<li>Breadboarding</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="uk-margin-remove-top">Programming</h3>
+							<ul>
+								<li>MATLAB</li>
+								<li>Java</li>
+								<li>Python</li>
+								<li>C++</li>
+								<li>HTML/CSS</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="uk-margin-remove-top">Other Software</h3>
+							<ul>
+								<li>Cura</li>
+								<li>3DPrinterOS</li>
+								<li>GrabCAD</li>
+								<li>Microsoft Office</li>
+								<li>Inkscape</li>
+								<li>GitHub</li>
+								<li>Blender</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="uk-margin-remove-top">Communication</h3>
+							<ul>
+								<li>Presentations (large/small audiences)</li>
+								<li>Written communications</li>
+								<li>Engineering documentation</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="uk-margin-remove-top">Languages</h3>
+							<ul>
+								<li>English (native)</li>
+								<li>French (conversational)</li>
+								<li>Tamil (conversational)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
