@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rigatoni - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("./components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("./components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-margin-xlarge-left uk-margin-xlarge-right">
+				<h1 class="uk-margin-bottom" style="font-weight: bold">Rigatoni</h1>
+				<h2 style="font-weight: bold">Background</h2>
+				<p>Rigatoni is a self-driving go-kart that I helped make as a part of <a href="https://robojackets.org/">RoboJackets</a>, Georgia Tech's competitive robotics club, to compete in the <a href="https://engineering.purdue.edu/evGrandPrix/autonomous/">evGrand Prix Autonomous</a> competition. Based on a Top Kart MSTEM3 chassis, the kart has been modified to allow an onboard computer to control its systems, like the drive motor, steering wheel, and brakes, as well as to incorporate various cameras and sensors to aid the car in navigating the course.</p>
+				<p>As is RoboJackets tradition, the number of i's in the name signifies the number of iterations that the robot has undergone. Rigatoni in particular has three iterations.</p>
+				
+				<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+					<div class="uk-inline uk-light">
+						<img src="./images/rigatoni.png" width="400" style="filter: brightness(70%)"/>
+						<div class="uk-overlay uk-position-top-center">
+							<h2 class="uk-text-bold">Rigatoni</h2>
+						</div>
+					</div>
+					<div class="uk-inline uk-light">
+						<img src="./images/rigatonii.jpg" width="400" style="filter: brightness(70%)"/>
+						<div class="uk-overlay uk-position-top-center">
+							<h2 class="uk-text-bold">Rigatonii</h2>
+						</div>
+					</div>
+					<div class="uk-inline uk-light">
+						<img src="./images/rigatoniii.png" width="400" />
+						<div class="uk-overlay uk-position-top-center uk-text-center">
+							<h2 class="uk-text-bold">Rigatoniii</h2>
+							<h4>Coming in Spring 2023</h4>
+						</div>
+					</div>
+				</div>
+				<p>In this page, I will detail my major contributions to the robot.</p>
+				<h2><strong>Brakes</strong> (Rigatonii)</h2>
+				<p>Since the team starts with a manual-driven go-kart, we already have a set of hydraulic brakes to build off of. Our challenge is then to autonomous-ify the mechanism&mdash;in other words, give the computer a way to step on the brake pedal.</p>
+				<h3 class="uk-text-bold">Development</h3>
+				<p>The original iteration, Rigatoni, featured a motor-powered lever arm that would push a lever on the master cylinder, engaging the brakes. This mechanism, which I helped design, did its job, but it caused strain on the motor, as it would constantly need to be applying power to keep the brakes engaged. This actually caused a motor burnout during one of our test days.</p>
+				<img src="./images/old-brakes.png" width="300" class="uk-align-center"/>
+				<p>When designing the brakes for the second iteration, Rigatonii, I took inspiration from the design of vice grips. When we tighten the screw, the clamp stays tight even if we let go. Similarly, if we can make a mechanism where the motor only needs torque to apply or release the brakes, but not to maintain a certain position, we could fix the motor strain issues.</p>
+				<h3 class="uk-text-bold">Design</h3>
+				<p>My final design is similar to that of a 3D printer z-axis. The braking motor turns a lead screw, which moves a pusher back and forth. A rod going parallel to the lead screw ensures that the pusher doesn't rotate, constraining its motion to forwards and backwards. The pusher has a rounded face where it contacts the master cylinder lever, to ensure consistent contact throughout the lever's rotation.</p>
+				<img src="./images/brakes.png" width="400" class="uk-align-center"/>
+				<h3 class="uk-text-bold">Results</h3>
+				<p>The brakes worked very well. The electrical subteam reported improved control with this mechanism over the previous iteration, due to the motor having an increased range of motion.</p>
+				<p>Unfortunately though, at the evGrand Prix 2022 competition, the motor burnt out due to the mechanism not being reset before calibration, rendering the brakes inoperable for the final race.</p>
+				<h2><strong>Aero Shell</strong> (Rigatoniii)</h2>
+				<h3 class="uk-text-bold">Development</h3>
+				<p>The evGrand Prix competition is relatively new, with the 2022 competition being only the third time it was held. As such, teams and the race organizers are still finding their footing. However, I considered what the future of the competition would look like, once the robots are able to race around the track just as fast as human drivers. At that point, just like in actual motorsports, kart aerodynamics would play a larger role in determining the winner.</p>
+				<p>Unfortunately, we are not quite prepared for that yet, with Rigatonii currently having the aerodynamics of a semi truck (drag coefficient = 1.03).</p>
+				<img src="./images/windtunnel.png" height="200" class="uk-align-center"/>
+				<h3 class="uk-text-bold">Design</h3>
+				<p>As an experiment, I considered what an aerodynamic shell around Rigatoniii could look like, sketching it over a photo of the stock MSTEM3 go-kart. I took inspiration from the design of open-wheel formula cars, adapting it to the shape of the go-kart. It's been lovingly christened by teammates as the "hammerhead manatee."</p>
+				<img src="./images/aero-concept-drawing.png" width="400" class="uk-align-center"/>
+				<p>The next steps are to improve and optimize this design, by testing it in computational fluid dynamics software, and taking inspiration from similar platforms, like Formula SAE.</p>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
