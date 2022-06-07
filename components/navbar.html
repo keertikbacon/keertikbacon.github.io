@@ -1,12 +1,22 @@
 <nav class="uk-navbar-container uk-navbar uk-light">
 	<div class="uk-navbar-left uk-margin-left">
+		<a class="uk-hidden@m" href="#offcanvas-slide" uk-icon="icon: menu; ratio: 2" uk-toggle></a>
+		<div id="offcanvas-slide" uk-offcanvas>
+			<div class="uk-offcanvas-bar">
+				<ul class="uk-nav uk-nav-default">
+					<li id="about-m"><a href="/about">About</a></li>
+					<li id="projects-m"><a href="/projects">Projects</a></li>
+					<li id="resume-m"><a href="/resume">Resume</a></li>
+				</ul>
+			</div>
+		</div>
 		<a id="logo" class="uk-navbar-item uk-logo" href="/">K</a>
 	</div>
 	<div class="uk-navbar-right uk-margin-right">
-		<ul class="uk-navbar-nav">
-			<li><a id="about" href="/about">About</a></li>
-			<li><a id="projects" href="/projects">Projects</a></li>
-			<li><a id="resume" href="/resume">Resume</a></li>
+		<ul class="uk-navbar-nav uk-visible@m">
+			<li id="about"><a href="/about">About</a></li>
+			<li id="projects"><a href="/projects">Projects</a></li>
+			<li id="resume"><a href="/resume">Resume</a></li>
 		</ul>
 	</div>
 </nav>
@@ -16,10 +26,13 @@
 	const urlSections = url.split("/");
 	if(urlSections[1].indexOf("about") != -1){
 		setActive("about");
+		setActive("about-m");
 	}else if(urlSections[1].indexOf("projects") != -1){
 		setActive("projects");
+		setActive("projects-m");
 	}else if(urlSections[1].indexOf("resume") != -1){
 		setActive("resume");
+		setActive("resume-m");
 	}		
 		
 	function setActive(id){
