@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Solar Surf Scooter - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("../components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("../components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<h1 class="uk-margin-bottom uk-text-bold">Solar Surf Scooter</h1>
+				<h2 class="uk-text-bold">Background</h2>
+				<p>ME 1770 is the introductory engineering visualization class at Georgia Tech, where we learn how to sketch product concepts and design using SolidWorks computer-aided design software. For the culminating semester project, we were tasked to work in groups to design some complex product. This product wouldn't be manufactured, so we could have fun with it, and make it as ambitious or outlandish as we wanted.</p>
+				<p>I took the class in Spring 2021, and for our final project, my group decided to address the problem of the lack of options for personal transport over water. While bikes, scooters, and skateboards are popular options on land, there aren't any economical equivalents for traveling over water. And so was born the <i>Solar Surf Scooter</i>, an amphibious electric scooter that, once in contact with water, would transform into a water vehicle, with the tires inflating into flotation devices, and a propeller and rudder extending from the body.</p>
+				<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+					<div>
+						<img src="./images/1770-scooter-land.jpg" width="500"/>
+					</div>
+					<div>
+						<img src="./images/1770-scooter-water.jpg" width="500"/>
+					</div>	
+				</div>
+				<h2 class="uk-text-bold">Design</h2>
+				<p>The design of the scooter was based on that of a commercial electric scooter, namely the Razor T25 Electric Scooter. Each group member was responsible for designing a section of the scooter, with my responsibilites being the wheels as well as the propeller and rudder.</p>
+				<h3 class="uk-text-bold">Wheels</h2>
+				<p>When we were originally conceptualizing this product, we needed to figure out how the scooter would change to move on water. I had an idea where parts of the scooter would be repurposed to work in water, like the tires for instance turning into floatation devices. I sketched this concept, having the tires expand out like an accordion to become buoys, with the folds in the tire in its folded position acting like tire treads.</p>
+				<img src="./images/1770-wheel-sketch.jpg" width="300" class="uk-align-center"/>
+				<p>This concept was not very reproducible in SolidWorks, which prefers rigid objects. And so I redesigned the wheels, this time having two rubber halves that split in the middle to reveal an inflatable section. This inflatable part was created with external references, such that it always fills the gap between the two halves of the wheel. </p>
+				<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+					<div>
+						<img src="./images/wheel-land.png" style="height: 300px"/>
+					</div>
+					<div>
+						<img src="./images/wheel-water.png" style="height: 300px"/>
+					</div>	
+				</div>
+				<p>To give the concept at least a Hollywood level of realism, a teammate and I worked together to add springs to the expanding sections of the wheel and wheel fork, which are covered by some sheaths that are folded in when the scooter is on land.</p>
+				<img src="./images/wheel-springs.png" width="500" class="uk-align-center"/>
+				<h3 class="uk-text-bold">Propeller/Rudder</h2>
+				<p>Of course in water, the wheels would be useless at propelling the scooter, so we needed a propeller and rudder on the scooter, which would have to retract into the scooter while on land, so that they don't scrape on the ground.</p>
+				<p>When sketching the assembly, I envisioned it to be similar to an airplane landing gear assembly.</p>
+				<img src="./images/1770-prop-sketch.jpg" width="500" class="uk-align-center"/>
+				<p>When designing in SolidWorks, I found it challenging to design something that would retract into the scooter body, which wasn't all that large, and especially since I had forgotten to account for the rudder in my initial sketches. It took some trial and error, but I was able to come up with a layout that worked. It's a good thing that we didn't actually have to manufacture this product though; the propeller and rudder don't look big enough to control the scooter.</p>
+				<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+					<div>
+						<img src="./images/prop-out.png" style="height: 300px"/>
+					</div>
+					<div>
+						<img src="./images/prop-in.png" style="height: 300px"/>
+					</div>	
+				</div>
+				<h2 class="uk-text-bold">Links</h2>
+				<a class="uk-button uk-button-primary uk-margin-top" href="./ME-1770-Final-Report.pdf">Final Report</a>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
