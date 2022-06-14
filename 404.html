@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Not Found - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="./images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="./css/uikit.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("./components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("./components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<div class="uk-panel">
+					<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/404.jpg" width="400">
+					<h1 class="uk-margin-bottom" style="font-weight: bold">404</h1>
+					<h2>Dang it, that page can't be found.</h2>
+					<p>I guess it's a good thing I'm a mechanical engineer and not a web developer, huh?</p>
+					<a class="uk-button uk-button-primary uk-margin-top" href="/">Go Back to Home</a>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+

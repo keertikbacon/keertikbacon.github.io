@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pok&eacute; Ball - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("../components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("../components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<h1 class="uk-margin-bottom uk-text-bold">Pok&eacute; Ball</h1>
+				<h2 class="uk-text-bold">Background</h2>
+				<p>ME 1770 is the introductory engineering visualization class at Georgia Tech, where we learn how to sketch product concepts and design using SolidWorks computer-aided design software. In addition to a <a href="./scooter">group design project</a>, the class also has an individual project, in which we are tasked with designing an item with several interlocking parts. Our item would then be 3D printed using an SLS printer, and then we would assemble our parts to see how well the interlocking parts fit together.</p>
+				<p>I took the class in Spring 2021, and, being a big Pok&eacute;mon fan, decided to make a Pok&eacute; Ball for my individual project. I envisioned it as a nice little box to hold things, and designed it accordingly.</p>
+				<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+					<div>
+						<img src="./images/pokeball-cad.png" style="height: 300px;"/>
+					</div>
+					<div>
+						<img src="./images/pokeball.jpg" style="height: 300px;"/>
+					</div>	
+				</div>
+				<h2 class="uk-text-bold">Design</h2>
+				<p>Going into the design process, my biggest concern was regarding the interlocking features. I knew there needed to be a hinge at the back, but it couldn't be too large, as I wanted to make my design faithful to the Pok&eacute; Balls from the video games and TV series. Those Pok&eacute; Balls have very hidden hinges, so I had to try and make the hinges on mine more understated.</p>
+				<p>The Pok&eacute; Ball would also need to snap closed, as otherwise it would be useless as a storage container. I initially wanted to make a mechanism that would open the ball when the center button was pressed, but I couldn't figure out how to design that, so I went with a separable snap fit that connects the 2 halves of the ball together all the center circular section.</p>
+				<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+					<div>
+						<img src="./images/pokeball-sketch.jpg" style="height: 300px;"/>
+					</div>
+					<div>
+						<img src="./images/pokeball-drawing.png" style="height: 300px;"/>
+					</div>	
+				</div>
+				<h2 class="uk-text-bold">Results</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>The printed Pok&eacute; Ball looked great! However, the interlocking features didn't work as expected, being way too loose, as I had misunderstood the tolerance values provided. As a result, the two halves of the ball wobble when hinging, and the snap fit doesn't keep the ball closed.</p>
+					</div>
+					<div class="uk-width-auto@m">
+						<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/pokeball-tolerance.png" width="300" />
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
