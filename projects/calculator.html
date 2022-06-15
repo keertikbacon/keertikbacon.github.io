@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arduino Calculator - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("../components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("../components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<h1 class="uk-margin-bottom uk-text-bold">Arduino Calculator</h1>
+				<h2 class="uk-text-bold">Background</h2>
+				<p>For my first semester at Georgia Tech in Fall 2020, I was actually an electrical engineering major. In that first semester, I took a class called ECE Discovery Studio (ECE 1871, now ECE 1100), in which the final project was to do a self-guided "discovery project" of some kind.</p>
+				<p>I chose to make a four-function calculator for my discovery project, using the Arduino microcontroller. This project actually went for much longer than the end of that class; I continued during the Winter 2020 semester break, and finished in Summer 2021.</p>
+				<img src="./images/calculator.jpg" width="500" class="uk-align-center"/>
+				<h2 class="uk-text-bold">Hardware Design</h2>
+				<p>The hardware has a pretty straightforward structure of input (the buttons for the calculator), processor (Arduino), and output (the LCD display).</p>
+				<img src="./images/calc-hardware.png" width="600" class="uk-align-center"/>
+				<p>A normal four-function calculator has 24 buttons, which would require 24 input/output slots. However, the Arduino UNO microcontroller I used only had 14 input/output slots.</p>
+				<p>And thus, in between the buttons and the Arduino are three parallel-to-serial shift registers that can condense the 24 button inputs to take up only 3 slots on the Arduino. This is done by sending all 24 input values sequentially through one output, with the other two slots used for clock and latch signals.</p>
+				<p>Using the shift registers also has the advantage of freeing up slots for the LCD display.  I used a display compatible with the Hitachi HD44780 driver, which allowed me to use the Arduino LiquidCrystal library, simplifying programming.</p>
+				<h2 class="uk-text-bold">Software</h2>
+				<p>The software on the calculator interprets the inputs, performs calculations if necessary, and outputs values to the LCD display.</p>
+				<p>Early on in development, I found that the numerical data types in Arduino were too inaccurate to use for the calculator, and so I created my own library for entering and performing calculations on numbers. This library would hold numbers as arrays of place values, and so I had to program in operations like addition, subtraction, multiplication, division, and taking square roots myself.</p>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
