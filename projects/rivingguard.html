@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Riving Guard - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("../components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("../components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<h1 class="uk-margin-bottom uk-text-bold">Riving Guard</h1>
+				<h2 class="uk-text-bold">Background</h2>
+				<p>When I was a high school senior, I took a course named <a href="https://www.pltw.org/our-programs/pltw-engineering-curriculum#curriculum-10">Project Lead the Way Engineering Design and Development</a>, a sort of high school capstone class. In this class, we were tasked with identifying a problem and developing a product to solve that problem and potentially take to market.</p>
+				<p>My group developed the <i>Riving Guard</i>, a new kind of table saw guard/riving knife combination that would allow more flexibility in the types of cuts that can be made, compared to a standard table saw guard. We wanted to encourage more guard use, especially with contractors who might not be able to afford high-end saws that stop the blade once skin contact is detected.</p>
+				<img src="./images/riving-side.jpg" width="500" class="uk-align-center"/>
+				<h2 class="uk-text-bold">Design</h2>
+				<p>While table saw guards are nothing new, we found through surveys and interviews of carpenters that many people don't like using them, since they can obstruct the user's view and restrict the types of cuts that can be made. Since most injuries happen when a guard is not used, we wanted to encourage guard use with our product, and we felt that a good way to do that was to address the issues people have with the standard guards.</p>
+				<img src="./images/riving-cad.png" width="500" class="uk-align-center"/>
+				<p>The Riving Guard is a circular piece of thin titanium that provides a barrier between the user and the saw blade. The guard is mounted to some bearings that allow it to rotate on the axis of the saw blade. Stock that is sent towards the blade pushes the guard up, causing it to rotate out of the way, while still covering exposed parts of the blade and acting as a riving knife at the other side of the saw, ensuring that the cut pieces do not kick back at the user. Springs connecting the guard to the bearing mount ensure that the guard springs back into position after the stock is passed through.</p>
+				<h2 class="uk-text-bold">Results</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>We presented our design concepts in October 2019 and January 2020 to a panel of judges from Northrop Grumman and Johns Hopkins University, winning praise for our designs and prototypes.</p>
+						<p>Unfortunately, the emergence of the COVID-19 pandemic in March 2020 prematurely ended this project. By that point, we had fabricated a prototype of the guard using polycarbonate, and were doing integration testing on a table saw.</p>
+					</div>
+					<div class="uk-width-auto@m">
+						<img class="uk-align-center uk-align-right@m uk-margin-remove-adjacent" src="./images/rivingguard.jpg" width="500" />
+					</div>
+				</div>
+				<h2 class="uk-text-bold">Links</h2>
+				<a class="uk-button uk-button-primary uk-margin-top" href="./documents/EDD-Eng-Notebook.pdf">Engineering Notebook</a>
+				<a class="uk-button uk-button-primary uk-margin-top" href="https://mjzhang4.github.io/rivingguard.html">Teammate's Portfolio</a>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
