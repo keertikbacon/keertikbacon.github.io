@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NFL Predictions - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("../components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("../components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<h1 class="uk-margin-bottom uk-text-bold">NFL Predictions</h1>
+				<h2 class="uk-text-bold">Background</h2>
+				<p>I'm a huge NFL fan. Come fall, I'll be spending most of my Sundays in front of the TV, mostly cheering on the Ravens and booing the Steelers, but I take whatever game I get. But once the Super Bowl ends, the lack of games hits me like a truck. For months, all the NFL has to offer are random free-agent signings, none of which ever seem to help the Ravens.</p>
+				<p>One day in Summer 2018, I wondered how good a computer would be at predict NFL game results. I didn't know much about machine learning at the time, but I was suddenly curious. And so I embarked on a journey of learning machine learning and seeing how good my computer was at fantasy football.</p>
+				<h2 class="uk-text-bold">Design</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>I downloaded a large dataset of 10 years worth of NFL game results, and with Python and scikit-learn in hand, I input previous game results into various machine learning methods, to see whether the models could predict future matchups. I was aiming for an accuracy near 70%, as most human analysts had accuracies between 60% - 70%, but the first few methods I tried didn't seem to be quite up to the mark, topping out with Naive Bayes at 63.7% accuracy.</p>
+						<p>So next, I delved into the labyrinth that is neural networks, which offer more flexibility, but in turn are much more complex. After a lot of fiddling and model training, I found a model that predicted NFL game results at an accuracy of <strong>69.4%</strong>! It was structured as seen in this image, with the input layer being 361 neurons, the one hidden layer having 300 neurons, and the output layer having one neuron that determined which team won.</p>
+					</div>
+					<div class="uk-width-auto@m">
+						<img src="./images/neural-net.png" width="400" />
+					</div>
+				</div>
+				<h2 class="uk-text-bold">Results</h2>
+				<p>After the model was trained, I tried using it to predict a couple of matchups during the 2018-19 NFL season. Unfortunately, due to the massive amounts of data the algorithm requires, I was only able to predict 5 games, but the results do look very promising, with an experimental accuracy of 80%.</p>
+				<table class="uk-table uk-table-divider">
+					<thead>
+						<tr>
+							<th>Matchup</th>
+							<th>Prediction</th>
+							<th>Winner</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Falcons at Eagles</td>
+							<td>Eagles</td>
+							<td>Eagles</td>
+						</tr>
+						<tr>
+							<td>Cowboys at Eagles</td>
+							<td>Cowboys</td>
+							<td>Cowboys</td>
+						</tr>
+						<tr>
+							<td>Falcons at Cowboys</td>
+							<td>Cowboys</td>
+							<td>Cowboys</td>
+						</tr>
+						<tr>
+							<td>Ravens at Falcons</td>
+							<td>Ravens</td>
+							<td>Ravens</td>
+						</tr>
+						<tr>
+							<td>Eagles at Cowboys</td>
+							<td>Eagles</td>
+							<td>Cowboys</td>
+						</tr>
+					</tbody>
+				</table>
+				<h2 class="uk-text-bold">Presentations</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>I presented this project at the 2019 Baltimore Science Fair, winning awards from:</p>
+						<ul>
+							<li>Raytheon Solipsys</li>
+							<li>US Coast Guard Yard</li>
+							<li>National Security Agency</li>
+						</ul>
+						<p>I was also selected to be an oral presenter at the 2019 Maryland Junior Science and Humanities Symposium.</p>
+					</div>
+					<div class="uk-width-auto@m">
+						<img src="./images/jshs.jpeg" width="400" />
+					</div>
+				</div>
+				<h2 class="uk-text-bold">Links</h2>
+				<a class="uk-button uk-button-primary uk-margin-top" href="./documents/NFL-Pred-Report.pdf">Final Report</a>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
