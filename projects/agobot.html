@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agobot - Keertik Bacon</title>
+		
+		<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="style" rel="stylesheet" href="../css/uikit.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/uikit.min.js"></script>
+		<script src="../js/uikit-icons.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("../components/navbar", function(data){
+				$("#nav").replaceWith(data);
+			});
+			$.get("../components/footer", function(data){
+				$("#footer").replaceWith(data);
+			});
+		</script>
+    </head>
+    <body>
+		<div id="nav"></div>
+		<div class="uk-section">
+			<div class="uk-container uk-container-large">
+				<h1 class="uk-margin-bottom uk-text-bold">Agobot</h1>
+				<h2 class="uk-text-bold">Background</h2>
+				<p>The FIRST Tech Challenge (FTC) is a high school robotics competition in which student teams construct robots that compete against others on a 12' x 12' playing field, completing various objectives to score points. These tasks range from those the robot has to perform on its own, to those where drivers can control the robot.</p>
+				<p>I competed on team 9866, Virus, for five years (2015-2020), mainly as a programmer, but I also contributed occasionally to the mechanical design.</p>
+				<iframe class="uk-align-center" src="https://drive.google.com/file/d/1WnJ6M6evARYKkbpq0QbG6pRQ_WfT9grj/preview" width="800" height="480" allowfullscreen uk-responsive uk-video></iframe>
+				<p class="uk-text-meta" style="text-align:center">Our robot (the orange and white robot with number 9866) in action at the 2020 MD State Championships. I was actually operating the mechanisms for this robot (you can see me to the left, wearing the black Nike shoes).</p>
+				<p>This page covers my contributions to the robot we made in my senior year of high school (2019-2020), named Agobot.</p>
+				<h2><strong>2019-2020 FTC Challenge:</strong> Skystone</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>This year's competition revolved around stacking large Lego-like blocks, known as "stones," on top of a "foundation," as high as possible. 4 teams compete in 2 vs. 2 alliances in this game, with 30-second autonomous and 2-minute driver-controlled periods.</p>
+						<p>The autonomous objectives are:</p>
+						<ul>
+							<li>Identifying "skystones" (stones with a black sticker on them), and taking them to the foundation first</li>
+							<li>Moving the foundation into a taped corner zone</li>
+							<li>Parking underneath a "bridge" structure</li>
+						</ul>
+						<p>The driver-controlled objectives are:</p>
+						<ul>
+							<li>Building towers of stones on the foundation, with more points for taller towers</li>
+							<li>In the last 30 seconds:
+								<ul>
+									<li>Move the foundation out of the taped-off corner zone</li>
+									<li>Parking in the taped-off corner</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="uk-width-auto@m">
+						<iframe src="https://www.youtube.com/embed/D2-CRBoGpJQ" width="560" height="315" allowfullscreen uk-responsive uk-video></iframe>
+					</div>
+				</div>
+				<h2 class="uk-text-bold">Odometry</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>Because there is an autonomous component to the game, the robot needs to know its position, to be able to act reliably by itself. What many teams do, and indeed what we did for our first 4 years, was to track the rotations of the robot's drive motors. This approach has two problems:</p>
+						<ol>
+							<li>If the wheels slip, due to fast acceleration or bumping into another robot, the position is thrown off, since the wheels turn but the robot isn't moving.</li>
+							<li>It restricts us to going forwards and backwards and turning, since it would be too complex to do curved paths using just the encoder data. The robot uses Mecanum wheels, allowing it to move sideways as well, and so we're not taking full advantage of our hardware.</li>
+						</ol>
+						<p>To address this, my team added odometry wheels to the robot, a popular system among veteran FTC teams in which dead wheels are used to keep track of robot position. Documentation on programming the wheels was rather sparse, so I had to derive equations myself. This was a daunting task, as the mecanum wheels that our robot used allowed for complex motions like rotating while translating linearly, and our odometry system would need to be able to keep track of the robot even through that.</p>
+						<p>My strategy to find the equations was to look at the motion of the robot on a iteration-by-iteration basis. Since motor speeds were only set once per loop iteration, we could say that the robot would move with its motor speeds being constant between loop iterations. This greatly reduced the number of paths the robot could take in that time, and so I derived equations that would check in every loop iteration to update the position of the robot.</p>
+						<p>I had a hard time finding any resources on odometry when I was competing, so to help the community out, I wrote a guide explaining the derivation of the odometry algorithm in more detail. If you're affiliated with an FTC team, or you're just interested, feel free to take a look!</p>
+						<a class="uk-button uk-button-primary uk-margin-top" href="./documents/FTC-Odometry.pdf">Odometry Guide</a>
+					</div>
+					<div class="uk-width-auto@m">
+						<img class="uk-align-center" src="./images/odometry.png" width="400" />
+					</div>
+				</div>
+				<h2 class="uk-text-bold">Pure Pursuit</h2>
+				<div class="" uk-grid>
+					<div class="uk-width-expand@m">
+						<p>While odometry was a huge step up in our robot's autonomous capabilities, there was still some room for improvement. For instance, if we wanted the robot to move in an L-shape, the robot would move from top to bottom, stop, and then move left to right. However, a human driver would be able to do the whole path in one continuous motion. This inefficiency on the robot's part costs us valuable time, especially since the autonomous period only lasts 30 seconds.</p>
+						<p>To solve this issue, I implemented a pure pursuit navigation algorithm. Normally, when we're telling the robot to go somewhere, we tell it to approach a fixed point. In pure pursuit, we tell the robot to approach a moving point, specifically a point a set distance further along the path than the robot. In other words, we're dangling out a carrot on a stick for the robot to follow.</p>
+						<p>With this algorithm, we can define a series of lines for the robot to go along, and Agobot will drive down them without stopping, and it'll even round corners (since the approach point will reach and turn the corner before Agobot does).</p>
+						<p>Like with odometry, there's not many good resources online that explain pure pursuit in an easy-to-explain manner, so I wrote up a guide. Feel free to take a look!</p>
+						<a class="uk-button uk-button-primary uk-margin-top" href="./documents/FTC-Pure-Pursuit.pdf">Pure Pursuit Guide</a>
+					</div>
+					<div class="uk-width-auto@m">
+						<img class="uk-align-center" src="./images/pp-diagram.png" width="500" />
+					</div>
+				</div>
+					
+				<h2 class="uk-text-bold">Links</h2>
+				<a class="uk-button uk-button-primary uk-margin-top" href="https://github.com/Centennial-FTC-Robotics/Virus2019-2020">Robot Code</a>
+				<a class="uk-button uk-button-primary uk-margin-top" href="https://mjzhang4.github.io/agobot.html">Teammate's Portfolio</a>
+			</div>
+		</div>
+		<div id="footer"></div>
+    </body>
+</html>
+
